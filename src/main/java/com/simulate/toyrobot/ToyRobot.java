@@ -27,7 +27,11 @@ public class ToyRobot {
         this.currentPosition.setDirection(Direction.valueOf(currentDirection.getRight()));
     }
 
-    public String reportPosition() {
+    public String reportPosition() throws ToyRobotSimulatorException {
+        if(null == currentPosition){
+            throw new ToyRobotSimulatorException("Please PLACE the Robot first");
+        }
+
         return this.currentPosition.getX() +
                 "," +
                 this.currentPosition.getY() +

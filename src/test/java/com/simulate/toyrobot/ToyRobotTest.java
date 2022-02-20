@@ -54,7 +54,7 @@ class ToyRobotTest {
     }
 
     @Test
-    public void shouldAblePrintPosition() {
+    public void shouldAblePrintPosition() throws ToyRobotSimulatorException {
         toyRobot.setCurrentPosition(startPosition);
         String expectedLocation = "0,0,NORTH";
         assertEquals(expectedLocation, toyRobot.reportPosition());
